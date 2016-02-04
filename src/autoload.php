@@ -7,7 +7,24 @@ spl_autoload_register(
         static $classes = null;
         if ($classes === null) {
             $classes = array(
-                'dummy' => '/Dummy.php'
+                'address' => '/Address.php',
+                'article' => '/Article.php',
+                'articledescription' => '/ArticleDescription.php',
+                'articlename' => '/ArticleName.php',
+                'austria' => '/Austria.php',
+                'city' => '/City.php',
+                'country' => '/Country.php',
+                'currency' => '/Currency.php',
+                'customer' => '/Customer.php',
+                'email' => '/Email.php',
+                'euro' => '/Euro.php',
+                'firstname' => '/FirstName.php',
+                'germany' => '/Germany.php',
+                'lastname' => '/LastName.php',
+                'money' => '/Money.php',
+                'shoppingcart' => '/ShoppingCart.php',
+                'street' => '/Street.php',
+                'zipcode' => '/ZipCode.php'
             );
         }
         $cn = strtolower($class);

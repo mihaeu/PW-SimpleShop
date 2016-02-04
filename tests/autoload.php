@@ -7,8 +7,43 @@ spl_autoload_register(
         static $classes = null;
         if ($classes === null) {
             $classes = array(
-                'dummy' => '/../src/Dummy.php',
-                'dummytest' => '/DummyTest.php'
+                'address' => '/../src/Address.php',
+                'addresstest' => '/AddressTest.php',
+                'article' => '/../src/Article.php',
+                'articledescription' => '/../src/ArticleDescription.php',
+                'articledescriptiontest' => '/ArticleDescriptionTest.php',
+                'articlename' => '/../src/ArticleName.php',
+                'articlenametest' => '/ArticleNameTest.php',
+                'articletest' => '/ArticleTest.php',
+                'austria' => '/../src/Austria.php',
+                'austriatest' => '/AustriaTest.php',
+                'city' => '/../src/City.php',
+                'citytest' => '/CityTest.php',
+                'country' => '/../src/Country.php',
+                'createmoneytrait' => '/CreateMoneyTrait.php',
+                'createusdtrait' => '/CreateUsdTrait.php',
+                'currency' => '/../src/Currency.php',
+                'currencytest' => '/CurrencyTest.php',
+                'customer' => '/../src/Customer.php',
+                'customertest' => '/CustomerTest.php',
+                'email' => '/../src/Email.php',
+                'emailtest' => '/EmailTest.php',
+                'euro' => '/../src/Euro.php',
+                'eurotest' => '/EuroTest.php',
+                'firstname' => '/../src/FirstName.php',
+                'firstnametest' => '/FirstNameTest.php',
+                'germany' => '/../src/Germany.php',
+                'germanytest' => '/GermanyTest.php',
+                'lastname' => '/../src/LastName.php',
+                'lastnametest' => '/LastNameTest.php',
+                'money' => '/../src/Money.php',
+                'moneytest' => '/MoneyTest.php',
+                'shoppingcart' => '/../src/ShoppingCart.php',
+                'shoppingcarttest' => '/ShoppingCartTest.php',
+                'street' => '/../src/Street.php',
+                'streettest' => '/StreetTest.php',
+                'zipcode' => '/../src/ZipCode.php',
+                'zipcodetest' => '/ZipCodeTest.php'
             );
         }
         $cn = strtolower($class);
