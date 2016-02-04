@@ -29,7 +29,7 @@ class Customer
         $this->email = $email;
         $this->address = $address;
 
-        $this->shoppingCart = new ShoppingCart();
+        $this->shoppingCart = new ShoppingCart($this->address->country());
     }
 
     public function __toString() : string

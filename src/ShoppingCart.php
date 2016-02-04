@@ -5,8 +5,12 @@ class ShoppingCart
     /** @var array */
     private $articles;
 
-    public function __construct()
+    /** @var ShoppingCart */
+    private $country;
+
+    public function __construct(Country $country)
     {
+        $this->country = $country;
         $this->articles = [];
     }
 
@@ -20,8 +24,21 @@ class ShoppingCart
         $sum = new Euro(0);
         foreach ($this->articles as $article) {
             /** Article $article */
-            $sum = $sum->addTo($article->price());
+            $price = $this->priceIncludingVat($article);
+            $sum = $sum->addTo($price);
         }
         return $sum;
+    }
+
+    private function priceIncludingVat(Article $article) : Money
+    {
+        if ($article->type() instanceof ArticleTypeNormal) {
+            $taxFactor = 1 + $this->country->vat() / 100;
+        } else {
+            $taxFactor = 1 + $this->country->reducedVat() / 100;
+        }
+
+        $price = (int)($article->price()->amount() * $taxFactor);
+        return new Euro($price);
     }
 }

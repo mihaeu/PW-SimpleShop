@@ -11,19 +11,33 @@ class Article
     /** @var Euro */
     private $price;
 
+    /** @var ArticleType */
+    private $type;
+
     public function __construct(
         ArticleName $name,
         ArticleDescription $description,
-        Euro $price
+        Euro $price,
+        ArticleType $type = null
     ) {
         $this->name = $name;
         $this->description = $description;
         $this->price = $price;
+
+        if (null === $type) {
+            $type = new ArticleTypeNormal();
+        }
+        $this->type = $type;
     }
 
     public function price() : Euro
     {
         return $this->price;
+    }
+
+    public function type() : ArticleType
+    {
+        return $this->type;
     }
 
     public function __toString() : string

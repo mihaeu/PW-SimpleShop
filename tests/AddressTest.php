@@ -23,5 +23,16 @@ class AddressTest extends PHPUnit_Framework_TestCase
             . '12345 Musterstadt' . PHP_EOL
             . 'Austria', $address->__toString());
     }
+
+    public function testHasCountry()
+    {
+        $address = new Address(
+            new Street('Musterstr. 1'),
+            new City('Musterstadt'),
+            new ZipCode(12345),
+            new Austria()
+        );
+        $this->assertInstanceOf(Austria::class, $address->country());
+    }
 }
 

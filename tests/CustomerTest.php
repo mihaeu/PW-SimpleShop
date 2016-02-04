@@ -18,6 +18,7 @@
  * @uses ArticleName
  * @uses Money
  * @uses ArticleDescription
+ * @uses Germany
  */
 class CustomerTest extends PHPUnit_Framework_TestCase
 {
@@ -52,7 +53,8 @@ class CustomerTest extends PHPUnit_Framework_TestCase
             new ArticleDescription(''),
             new Euro(100)
         ));
-        $this->assertEquals('1.00 EUR', $this->customer->shoppingCart()->total());
+        $totalPrice = $this->customer->shoppingCart()->total();
+        $this->assertEquals('1.19 EUR', $totalPrice->__toString());
     }
 }
 

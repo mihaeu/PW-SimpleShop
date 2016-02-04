@@ -22,6 +22,11 @@ class Address
         $this->country = $country;
     }
 
+    public function country() : Country
+    {
+        return $this->country;
+    }
+
     public function __toString() : string
     {
         return $this->street . PHP_EOL

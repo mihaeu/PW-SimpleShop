@@ -31,5 +31,15 @@ class ArticleTest extends PHPUnit_Framework_TestCase
         );
         $this->assertEquals(new Euro(100), $article->price());
     }
+    
+    public function testHasType()
+    {
+        $article = new Article(
+            new ArticleName('Gummiboot'),
+            new ArticleDescription(''),
+            new Euro(100)
+        );
+        $this->assertInstanceOf(ArticleTypeNormal::class, $article->type());
+    }
 }
 
