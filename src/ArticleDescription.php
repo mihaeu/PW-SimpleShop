@@ -3,6 +3,7 @@
 class ArticleDescription
 {
     const MAX_LENGTH = 1024;
+
     /** @var string */
     private $description;
 

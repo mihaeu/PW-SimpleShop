@@ -3,6 +3,7 @@
 class City
 {
     const MIN_LENGTH = 3;
+
     /** @var string */
     private $city;
 
